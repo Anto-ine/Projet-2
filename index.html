@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memory — Emoji Match</title>
+  <meta name="description" content="Jeu de Memory en emoji — rapide, accessible, avec meilleur score." />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container row between center">
+      <h1 class="title">🧠 Memory — Emoji Match</h1>
+      <div class="hud row gap">
+        <div class="pill">⏱️ <span id="time">00:00</span></div>
+        <div class="pill">🫳 Coups : <span id="moves">0</span></div>
+        <div class="pill">🏆 Meilleur : <span id="best">—</span></div>
+        <button id="restart" class="btn">Rejouer</button>
+        <button id="size" class="btn ghost" aria-pressed="false" title="Changer la taille">Taille : 4×4</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="board-wrap">
+      <div id="board" class="board" role="grid" aria-label="Jeu de Memory" aria-live="polite">
+        <!-- Cartes injectées par JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container muted">Flèches pour se déplacer • Entrée/Espace pour retourner</div>
+  </footer>
+
+  <!-- Overlay victoire -->
+  <div id="overlay" class="overlay" hidden>
+    <div class="modal">
+      <h2>🎉 Bravo !</h2>
+      <p>Temps : <strong id="final-time"></strong> · Coups : <strong id="final-moves"></strong></p>
+      <p id="record-line" class="record" hidden>🟡 Nouveau meilleur score !</p>
+      <div class="row center gap">
+        <button id="again" class="btn">Rejouer</button>
+        <button id="close" class="btn ghost">Fermer</button>
+      </div>
+    </div>
+  </div>
+
+ <script src="script.js" defer></script>
+
+</body>
+</html>
